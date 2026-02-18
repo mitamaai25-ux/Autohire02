@@ -141,3 +141,27 @@ footer {
   float: right;
   cursor: pointer;
 }
+.dashboard-container {
+  padding: 40px;
+}
+
+.chatbot {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.chat-box {
+  height: 200px;
+  overflow-y: auto;
+  background: #f1f5f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.chat-box p {
+  margin: 5px 0;
+}
