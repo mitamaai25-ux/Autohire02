@@ -39,3 +39,20 @@ exports.login = async (req, res) => {
 
   res.json({ token });
 };
+exports.chatbot = async (req, res) => {
+  const { message } = req.body;
+
+  let response;
+
+  if (message.includes("hire")) {
+    response = "To hire, post a job and review freelancer proposals.";
+  } 
+  else if (message.includes("skills")) {
+    response = "Update your profile skills to get better AI job matching.";
+  }
+  else {
+    response = "I’m AutoHire AI Assistant. Ask me about hiring or job matching.";
+  }
+
+  res.json({ reply: response });
+};
