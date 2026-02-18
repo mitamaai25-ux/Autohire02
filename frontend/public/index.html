@@ -3,10 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoHire - Freelancing Platform</title>
+  <title>AutoHire - Freelancing & Hiring Platform</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">AutoHire</h2>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#roles">Join</a></li>
+        <li><button class="login-btn" onclick="openLogin()">Login</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hire Smart. Work Smart.</h1>
+      <p>AI-powered freelancing and hiring platform.</p>
+      <button class="cta-btn" onclick="scrollToRoles()">Get Started</button>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Why Choose AutoHire?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>AI Job Matching</h3>
+        <p>Smart algorithm matches freelancers with relevant jobs instantly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Secure Hiring</h3>
+        <p>JWT-based authentication ensures safe access and role protection.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Chatbot Assistant</h3>
+        <p>AI hiring assistant helps you post jobs and manage candidates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Create Account</h3>
+        <p>Sign up as Client or Freelancer.</p>
+      </div>
+      <div class="step">
+        <h3>2. Post or Apply</h3>
+        <p>Clients post jobs, freelancers apply.</p>
+      </div>
+      <div class="step">
+        <h3>3. AI Matching</h3>
+        <p>Our AI recommends best matches instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE SELECTION -->
+  <section class="roles" id="roles">
+    <h2>Join AutoHire</h2>
+    <div class="role-buttons">
+      <button class="role-btn client">I'm a Client</button>
+      <button class="role-btn freelancer">I'm a Freelancer</button>
+    </div>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="submit-btn">Login</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 AutoHire. All rights reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
