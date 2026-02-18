@@ -5,6 +5,20 @@ if (!token) {
 }
 
 // Load AI Job Matches
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const message = input.value;
+
+  if (!message) return;
+
+  socket.emit("sendMessage", {
+    roomId: roomId,
+    message: message
+  });
+
+  input.value = "";
+}
+
 async function loadMatches() {
   try {
     const res = await fetch("http://localhost:5000/api/ai/match", {
