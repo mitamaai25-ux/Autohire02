@@ -165,3 +165,18 @@ footer {
 .chat-box p {
   margin: 5px 0;
 }
+
+.chat-box {
+  height: 250px;
+  overflow-y: auto;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.chat-box p {
+  padding: 6px;
+  background: #e2e8f0;
+  border-radius: 5px;
+}
