@@ -34,6 +34,29 @@ async function loadMatches() {
 
 loadMatches();
 
+// Connect socket with JWT
+const socket = io("http://localhost:5000", {
+  auth: {
+    token: token
+  }
+});
+
+// Join a room (example room)
+const roomId = "generalRoom";
+socket.emit("joinRoom", roomId);
+
+// Listen for incoming messages
+socket.on("receiveMessage", (data) => {
+  const chatBox = document.getElementById("chatBox");
+
+  chatBox.innerHTML += `
+    <p>
+      <strong>${data.sender === getUserId() ? "You" : "Other"}:</strong>
+      ${data.message}
+    </p>
+  `;
+});
+
 // Chatbot UI
 async function sendMessage() {
   const input = document.getElementById("chatInput");
