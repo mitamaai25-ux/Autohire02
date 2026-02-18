@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function FreelancerDashboard() {
   const [projects, setProjects] = useState([]);
@@ -192,3 +194,39 @@ function FreelancerDashboard() {
 }
 
 export default FreelancerDashboard;
+function FreelancerDashboard() {
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchMatches = async () => {
+      const token = localStorage.getItem("token");
+
+      const res = await axios.get(
+        "http://localhost:5000/api/ai/match",
+        {
+          headers: { Authorization: token }
+        }
+      );
+
+      setJobs(res.data);
+    };
+
+    fetchMatches();
+  }, []);
+
+  return (
+    <div className="container">
+      <h2>AI Matched Jobs</h2>
+
+      {jobs.map((item, index) => (
+        <div key={index}>
+          <h3>{item.job.title}</h3>
+          <p>Match: {item.matchPercentage}%</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default FreelancerDashboard;
+
