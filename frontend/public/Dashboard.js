@@ -72,30 +72,6 @@ socket.on("receiveMessage", (data) => {
 });
 
 // Chatbot UI
-async function sendMessage() {
-  const input = document.getElementById("chatInput");
-  const message = input.value;
-
-  if (!message) return;
-
-  const chatBox = document.getElementById("chatBox");
-
-  chatBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
-
-  const res = await fetch("http://localhost:5000/api/ai/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message })
-  });
-
-  const data = await res.json();
-
-  chatBox.innerHTML += `<p><strong>AI:</strong> ${data.reply}</p>`;
-
-  input.value = "";
-}
 
 // Logout
 function logout() {
